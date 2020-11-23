@@ -1,0 +1,19 @@
+#!/bin/sh
+
+STARTUPCONF=/config/etc/opt/dell/os10/db_init/startup.xml
+CLISH=`whereis clish | awk '{print $NF}'`
+export PATH=$PATH:/opt/dell/os10/bin
+export TEST=`su -c ${CLISH} -c "show ztd-status" admin | grep -i Status | awk -F":" ' { print $2 } ' | awk ' { print $1 } '`
+
+if test ${TEST} = 'disabled'; then
+
+              echo "ZTD not active, re-activating by command 'reload ztd'";
+              echo "yes" | su -c ${CLISH} -c "reload ztd" admin
+fi
+
+if test ${TEST} != 'disabled'; then
+
+        echo "ZTD already activated, not need to do anything";
+
+fi
+
