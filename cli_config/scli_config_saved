@@ -8,15 +8,15 @@ interface mgmt1/1/1
  ip address dhcp
  ipv6 address autoconfig
 
-username fallback password $6$rounds=656000$Fgb45tMBYQDBjQ2y$ngTTuPrcsCLCxgGMSOZfVDlpQ0.k0bP/qZszlXuTC6rLxSAeZDFVvSnX/8b8Pz9bKvVTzWHGVmrLQsLkPTrLY0 role netadmin priv-lvl 15
+username ansible password $6$rounds=656000$32rj89LV/7OiX4H.$hSWT9GOx2WQNhdlF9XaYaas67yiyX6iVGJVH5ZUH1cJVy8Eph9kREhtXIBhtDN7hfd0dSahj5Hgd/9DZB01S2. role netadmin priv-lvl 15
 
 banner motd ^C
 
   *****************************************************
-  * This router is partly non-volatile RAM ZTD staged *
-  * ztd script used : sztd.sh                         *
-  * configfile used : scli_config_saved               *
-  * postscript used : spost_script.sh                 *
+  * This router is ZTD staged                         *
+  * ztd script used : ztd.sh                          *
+  * configfile used : cli_config_saved                *
+  * postscript used : post_script.sh                  *
   *****************************************************
 
 ^C
